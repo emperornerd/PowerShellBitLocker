@@ -1,0 +1,4 @@
+# obviously configure the computer name as needed
+$objComputer = Get-ADComputer constantsandvariables
+$Bitlocker_Object = Get-ADObject -Filter {objectclass -eq 'msFVE-RecoveryInformation'} -SearchBase $objComputer.DistinguishedName -Properties 'msFVE-RecoveryPassword'
+$Bitlocker_Object
